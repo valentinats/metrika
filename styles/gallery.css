@@ -1,0 +1,143 @@
+.gallery {
+  position: relative;
+}
+
+.gallery-title-wrapper {
+  width: 100%;
+  position: absolute;
+  top: 60px;
+  z-index: 1;
+}
+
+.gallery-sub-title {
+  color: white;
+  font-size: 22px;
+  line-height: 30px;
+  letter-spacing: -0.03em;
+}
+
+.gallery__slides {
+  position: relative;
+  height: 717px;
+}
+
+.gallery__slide {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+.gallery__slide_active {
+  opacity: 1;
+  display: block;
+}
+
+.gallery-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.gallery-text {
+  position: absolute;
+  bottom: 60px;
+  font-size: 30px;
+  line-height: 41px;
+  color: white;
+  letter-spacing: -0.03em;
+}
+
+.gallery-controls-wrapper {
+  position: absolute;
+  width: 100%;
+  bottom: 162px;
+}
+
+.gallery__control-prev {
+  margin-right: 34px;
+}
+
+.gallery__control-next:hover {
+  opacity: 0.5;
+}
+
+.gallery__control-prev,
+.gallery__control-next {
+  padding: 0;
+  background: none;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 1199px) {
+  .gallery-title-wrapper {
+    top: 80px;
+  }
+
+  .gallery-sub-title {
+    font-size: 20px;
+    line-height: 27px;
+  }
+
+  .gallery__slides {
+    height: 536px;
+  }
+
+  .gallery-text {
+    bottom: 80px;
+    font-size: 25px;
+    line-height: 34px;
+  }
+
+  .gallery-controls-wrapper {
+    bottom: 152px;
+  }
+
+  .gallery__control-prev img,
+  .gallery__control-next img {
+    width: 19px;
+  }
+}
+
+@media (max-width: 500px) {
+  .gallery-title-wrapper {
+    top: 61px;
+  }
+
+  .gallery-sub-title {
+    font-size: 14px;
+    line-height: 19px;
+  }
+
+  .gallery__slides {
+    height: 408px;
+  }
+
+  .gallery-text {
+    bottom: 60px;
+    font-size: 19px;
+    line-height: 26px;
+  }
+
+  .gallery-controls-wrapper {
+    bottom: 189px;
+}
+
+  .gallery__controls {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    bottom: 50%;
+  }
+
+  .gallery__control-prev img,
+  .gallery__control-next img {
+    width: 14px;
+  }
+}

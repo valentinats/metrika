@@ -1,0 +1,77 @@
+.order-title {
+  text-align: center;
+  font-size: 45px;
+  line-height: 61px;
+  letter-spacing: -0.03em;
+  margin-bottom: 4px;
+}
+
+.order-text {
+  margin-bottom: 58px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 25px;
+  letter-spacing: -0.03em;
+}
+
+.order-input-wrapper {
+  max-width: 643px;
+}
+
+.order-input {
+  padding-bottom: 10px;
+  box-sizing: border-box;
+  display: block;
+  margin-bottom: 50px;
+  border: none;
+  border-bottom: 1px solid black;
+  width: 100%;
+  font-family: Manrope;
+  font-size: 25px;
+  line-height: 33px;
+  letter-spacing: -0.03em;
+}
+
+.order-input:last-child {
+  margin-bottom: 80px;
+}
+
+.order-input:focus {
+  outline: none;
+}
+
+.order-button {
+  width: 100%;
+  padding: 20px;
+  border: 1px solid #ad1818;
+  background-color: #ad1818;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 20px;
+  line-height: 27px;
+  cursor: pointer;
+}
+
+@media (max-width: 767px) {
+  .order-title {
+    font-size: 25px;
+    line-height: 34px;
+    margin-bottom: 11px;
+  }
+
+  .order-text {
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 19px;
+  }
+
+  .order-input {
+    margin-bottom: 20px;
+    font-size: 18px;
+    line-height: 45px;
+  }
+
+  .order-input:last-child {
+    margin-bottom: 60px;
+  }
+}

@@ -1,0 +1,85 @@
+@import "/styles/header.css";
+@import "/styles/burger.css";
+@import "/styles/primary.css";
+@import "/styles/about.css";
+@import "/styles/projects.css";
+@import "/styles/services.css";
+@import "/styles/popup.css";
+@import "/styles/order.css";
+@import "/styles/reviews.css";
+@import "/styles/gallery.css";
+@import "/styles/contacts.css";
+@import "/styles/footer.css";
+
+html,
+body {
+  width: 100%;
+  font-family: "Manrope", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  margin: 0 auto;
+  scroll-behavior: smooth;
+}
+
+.body_fixed {
+  overflow: hidden;
+}
+
+.about-button,
+.projects-button,
+.order-button,
+.services-button {
+  font-family: "Manrope", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1150px;
+  margin: 0 auto;
+}
+
+.sub-title {
+  font-size: 18px;
+  line-height: 25px;
+}
+
+.sub-title h2 {
+  margin-bottom: 30px;
+}
+
+/* for tablet */
+
+@media (max-width: 1199px) {
+  .main {
+    padding: 0 16px;
+  }
+
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+/* for phone */
+
+@media (max-width: 500px) {
+  .container {
+    padding-left: 13px;
+    padding-right: 13px;
+  }
+
+  .sub-title {
+    font-size: 14px;
+    line-height: 19px;
+  }
+
+  .sub-title h2 {
+    margin-bottom: 20px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+  }
+}

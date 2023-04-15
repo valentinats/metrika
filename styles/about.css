@@ -1,0 +1,51 @@
+.about-text {
+  max-width: 1048px;
+  margin-bottom: 30px;
+  font-size: 45px;
+  line-height: 61px;
+  letter-spacing: -0.03em;
+}
+
+.about-button {
+  display: block;
+  max-width: 255px;
+  margin-bottom: 150px;
+  padding: 20px;
+  text-align: center;
+  font-size: 20px;
+  line-height: 27px;
+  color: white;
+  background-color: #ad1818;
+  border: 1px solid #ad1818;
+  border-radius: 5px;
+  cursor: pointer;
+  letter-spacing: -0.03em;
+}
+
+@media (max-width: 1199px) {
+  .about-text {
+    font-size: 35px;
+    line-height: 48px;
+    max-width: 690px;
+  }
+
+  .about-button {
+    margin-bottom: 120px;
+  }
+}
+
+@media (max-width: 500px) {
+  .about-text {
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 30px;
+  }
+
+  .about-button {
+    margin-bottom: 80px;
+    max-width: 100%;
+    padding: 15px 30px;
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
