@@ -23,10 +23,10 @@
 .popup__content {
   position: relative;
   width: 777px;
-  max-height: 114%;
+  max-height: 100%;
   overflow-y: auto;
   background-color: white;
-  padding: 94px 66px;
+  padding: 67px 66px;
   border-radius: 10px;
 }
 
@@ -41,7 +41,7 @@
 
 @media (max-width: 767px) {
   .popup__content {
-    padding: 80px 16px;
+    padding: 67px 16px;
   }
 
   .popup__close-btn {

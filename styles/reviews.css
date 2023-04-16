@@ -62,6 +62,7 @@
 @media (max-width: 500px) {
   .row {
     flex-direction: column;
+    row-gap: 76px;
   }
 
   .col {

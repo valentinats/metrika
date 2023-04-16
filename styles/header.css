@@ -66,4 +66,8 @@
 }
 
 @media (max-width: 500px) {
+  .menu-logo img {
+    width: 96px;
+    height: 16px;
+  }
 }

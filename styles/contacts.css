@@ -64,7 +64,7 @@
 @media (max-width: 1199px) {
   .contacts {
     padding-top: 120px;
-    padding-bottom: 80px;
+    padding-bottom: 120px;
   }
 
   .contacts-items {
@@ -78,16 +78,15 @@
   .contacts-email-text {
     font-size: 45px;
   }
-  
+
   .email-line {
     max-width: 305px;
   }
-
 }
 
 @media (max-width: 500px) {
   .contacts {
-    padding-top: 80px;
+    padding-top: 83px;
   }
 
   .contacts-sub-title {
