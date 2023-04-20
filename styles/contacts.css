@@ -37,7 +37,7 @@
 }
 
 .contacts-email-item:before {
-  content: url(/resources/mail-logo.png);
+  content: url(/resources/telegram-logo.png);
   position: absolute;
   display: block;
   max-width: 24px;
