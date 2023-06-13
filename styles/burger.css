@@ -4,7 +4,7 @@
 }
 
 .burger-btn_open {
-  content: url(/resources/close-button.svg);
+  content: url(../resources/close-button.svg);
   background: none;
 }
 

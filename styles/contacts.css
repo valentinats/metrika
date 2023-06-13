@@ -21,7 +21,7 @@
 
 .contacts-number-item:before {
   left: -5px;
-  content: url(/resources/phone-logo.png);
+  content: url(../resources/phone-logo.png);
   position: absolute;
   display: block;
   max-width: 24px;
@@ -37,7 +37,7 @@
 }
 
 .contacts-email-item:before {
-  content: url(/resources/telegram-logo.png);
+  content: url(../resources/telegram-logo.png);
   position: absolute;
   display: block;
   max-width: 24px;

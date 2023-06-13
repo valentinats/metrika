@@ -264,7 +264,7 @@
                 <div class="services-item-title">Комплектация</div>
               </li>
             </ul>
-            <button class="js-btn services-button">Заказать услугу</button>
+            <a class="js-btn services-button" href="#contacts">Заказать услугу</a>
 
             <div class="js-popup popup">
               <div class="js-popup__content popup__content">
@@ -273,11 +273,11 @@
                   Заполните форму, мы свяжемся с вами в течение суток
                 </p>
                 <form class="order-input-wrapper">
-                  <input 
-                    class="order-input" 
-                    type="text" 
+                  <input
+                    class="order-input"
+                    type="text"
                     name="name"
-                    placeholder="Имя" 
+                    placeholder="Имя"
                   />
                   <input
                     class="order-input"
@@ -295,6 +295,169 @@
                 <button class="order-button">Отправить</button>
                 <div class="popup__close-btn js-popup__close-btn"></div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="calculator" id="calculator">
+        <div class="container">
+          <p class="calculator-title">Калькулятор стоимости ремонта</p>
+          <div class="calculator-wrapper">
+            <div class="first-inner">
+              <span class="type-line"></span>
+              <div class="type">
+                <p>выберите тип помещения</p>
+                <select class="type-list" id="categorySelect" name="mySelect">
+                  <option hidden="" disabled="" selected="" value="Категория">
+                    тип
+                  </option>
+                  <option value="апартаменты">квартира</option>
+                  <option value="апартаменты">апартаменты</option>
+                  <option value="офис">офис</option>
+                  <option value="пентхаус">пентхаус</option>
+                  <option value="склад">склад</option>
+                </select>
+                <p>укажите метраж помещения</p>
+                <div class="range">
+                  <div class="range-spans">
+                    <div id="send_result" class="range-result">0</div>
+                    <span>м²</span>
+                  </div>
+                  <input
+                    id="id_range"
+                    type="range"
+                    id="footage"
+                    min="0"
+                    max="100"
+                    value="0"
+                    step="1"
+                    oninput="metres()"
+                  />
+                </div>
+              </div>
+
+              <span class="type-line"></span>
+              <div class="composition">
+                <p class="composition-title">состав дизайн-проекта</p>
+                <div class="composition-list">
+                  <p>планировочные решения</p>
+                  <div class="composition-counter">
+                    <button id="decrement1-btn" class="decrement-btn">-</button>
+                    <div id="counter1-value" class="counter-value">0</div>
+                    <button id="increment1-btn" class="increment-btn">+</button>
+                  </div>
+                  <p>варианты чертежей</p>
+                  <div class="composition-counter">
+                    <button id="decrement2-btn" class="decrement-btn">-</button>
+                    <div id="counter2-value" class="counter-value">0</div>
+                    <button id="increment2-btn" class="increment-btn">+</button>
+                  </div>
+                  <p>варианты визуализаций</p>
+                  <div class="composition-counter">
+                    <button id="decrement3-btn" class="decrement-btn">-</button>
+                    <div id="counter3-value" class="counter-value">0</div>
+                    <button id="increment3-btn" class="increment-btn">+</button>
+                  </div>
+                </div>
+              </div>
+
+              <span class="type-line"></span>
+              <div class="design">
+                <p class="design-title">что понадобится в дизайн проекте</p>
+                <ol id="cards-list" class="cards-list">
+                  <li class="input-group">
+                    <input id="option" type="checkbox" data-action="done"></input>
+                    <label class="label" for="option1">3D визуализация</label>
+                  </li>
+                  <li class="input-group">
+                    <input id="option" type="checkbox" data-action="done"></input>
+                    <label class="label" for="option2">чертежи (рабочая документация)</label>
+                  </li>
+                  <li class="input-group">
+                    <input id="option" type="checkbox" data-action="done"></input>
+                    <label class="label" for="option3">планировочное решение</label>
+                  </li>
+                  <li class="input-group">
+                    <input id="option" type="checkbox" data-action="done"></input>
+                    <label class="label" for="option4">ведомости (шопинг-лист)</label>
+                  </li>
+                  <li class="input-group">
+                    <input id="option" type="checkbox" data-action="done"></input>
+                    <label class="label" for="option5">товары со скидкой</label>
+                  </li>
+                  <li class="input-group">
+                    <input id="option" type="checkbox" data-action="done"></input>
+                    <label class="label" for="option6">смета на ремонт</label>
+                  </li>
+                  <li class="input-group">
+                    <input id="option" type="checkbox" data-action="done"></input>
+                    <label class="label" for="option7">мебель на заказ</label>
+                  </li>
+                </ol>
+              </div>
+
+              <span class="type-line"></span>
+              <div class="add-services">
+                <p class="add-services-title">дополнительные услуги</p>
+                <p class="add-services-text">
+                  оплачиваются отдельно и не входят в состав проекта
+                </p>
+                <div class="add-services-list">
+                  <div class="add-services-item">
+                    <input id="checkbox" class="add-services-check" type="checkbox" data-action="done" value="30000">
+                    <p class="add-services-desc">умный дом</p>
+                    <p class="add-services-price">30 000 ₽</p>
+                  </div>
+                  <div class="add-services-item">
+                    <input id="checkbox" class="add-services-check" type="checkbox" data-action="done" value="20000">
+                    <p class="add-services-desc">технический надзор</p>
+                    <p class="add-services-price">20 000 ₽</p>
+                  </div>
+                  <div class="add-services-item">
+                    <input id="checkbox" class="add-services-check" type="checkbox" data-action="done" value="25000">
+                    <p class="add-services-desc">авторский надзор</p>
+                    <p class="add-services-price">25 000 ₽</p>
+                  </div>
+                  <div class="add-services-item">
+                    <input id="checkbox" class="add-services-check" type="checkbox" data-action="done" value="4000">
+                    <p class="add-services-desc">
+                      3D тур по визуализациям проекта
+                    </p>
+                    <p class="add-services-price">4 000 ₽</p>
+                  </div>
+                  <div class="add-services-item">
+                    <input id="checkbox" class="add-services-check" type="checkbox" data-action="done" value="20000">
+                    <p class="add-services-desc">
+                      дизайн-проект дополнительного помещения
+                    </p>
+                    <p class="add-services-price">20 000 ₽</p>
+                  </div>
+                  <div class="add-services-item">
+                    <input id="checkbox" class="add-services-check" type="checkbox" data-action="done" value="10000">
+                    <p class="add-services-desc">дизайн-проект лоджии</p>
+                    <p class="add-services-price">10 000 ₽</p>
+                  </div>
+                  <div class="add-services-item">
+                    <input id="checkbox" class="add-services-check" type="checkbox" data-action="done" value="10000">
+                    <p class="add-services-desc">
+                      дизайн-проект гардеробной комнаты
+                    </p>
+                    <p class="add-services-price">10 000 ₽</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="second-inner">
+              <p class="banner-title">стоимость проекта</p>
+              <p class="banner-price">
+                <span class="js-banner-price-sum">0</span> ₽
+              </p>
+              <p class="banner-area">
+                <span class="js-banner-area-sum">1000</span> ₽/м²
+              </p>
+              <p class="banner-term">35-45 дней</p>
+              <a class="banner-button" href="#contacts">Заказать проект</a>
             </div>
           </div>
         </div>
@@ -490,5 +653,6 @@
     <script src="burger.js"></script>
     <script src="gallery.js"></script>
     <script src="popup.js"></script>
+    <script src="calculator.js"></script>
   </body>
 </html>

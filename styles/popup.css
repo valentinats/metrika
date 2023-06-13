@@ -31,7 +31,7 @@
 }
 
 .popup__close-btn {
-  content: url(/resources/close-button.svg);
+  content: url(../resources/close-button.svg);
   position: absolute;
   right: 34px;
   top: 32px;
