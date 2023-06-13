@@ -35,7 +35,7 @@
 
 .type-list {
   width: 232px;
-  background: url("/resources/pointer.png") 98% / 18% no-repeat;
+  background: url("../resources/pointer.png") 98% / 18% no-repeat;
   box-sizing: border-box;
   font-size: 30px;
   line-height: 41px;
