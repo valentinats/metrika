@@ -162,8 +162,6 @@ label::after {
   width: 23px;
   height: 18px;
   content: "";
-  /*background-color: #fff;
-  background-image: url("check-svgrepo-com.svg");*/
   background-repeat: no-repeat;
   background-position: 2px 3px;
   border-radius: 50%;
@@ -301,14 +299,6 @@ input::after {
 .checked {
   border-color: #ad1818;
   color: #ad1818;
-}
-
-.checked::after {
-  content: url("../resources/calculator-list-checkmark.svg");
-  zoom: 55%;
-  position: absolute;
-  right: 25px;
-  top: 30%;
 }
 
 .input-group input[type="checkbox"] {
