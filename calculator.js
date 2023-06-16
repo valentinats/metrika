@@ -68,23 +68,26 @@ if (localStorage.getItem("thirdCounter")) {
 }
 
 // Список в разделе "ЧТО ПОНАДОБИТСЯ В ДИЗАЙН ПРОЕКТЕ" --------------------
-const cardList = document.querySelector('#cards-list');
+const cardList = document.querySelector("#cards-list");
 const check = cardList.querySelectorAll('li input[id="option"]');
 
 // Добавление id каждому чекбоксу
 check.forEach((checkbox, index) => {
   const id = `option-${index + 1}`;
   checkbox.id = id;
-  checkbox.closest('.input-group').querySelector('.label').setAttribute('for', id);
+  checkbox
+    .closest(".input-group")
+    .querySelector(".label")
+    .setAttribute("for", id);
 });
 
 // Загрузка начального состояния из локального хранилища
 function loadFromLS() {
   check.forEach((checkbox) => {
-    const isChecked = localStorage.getItem(checkbox.id) === 'true';
+    const isChecked = localStorage.getItem(checkbox.id) === "true";
     checkbox.checked = isChecked;
     if (isChecked) {
-      checkbox.closest('.input-group').classList.add('checked');
+      checkbox.closest(".input-group").classList.add("checked");
     }
   });
 }
@@ -96,7 +99,7 @@ function updateLS() {
   });
 }
 
-loadFromLS(); 
+loadFromLS();
 
 cardList.addEventListener("change", (event) => {
   if (event.target.type === "checkbox") {
@@ -110,8 +113,10 @@ cardList.addEventListener("change", (event) => {
 const checkboxes = document.querySelectorAll(".add-services-check");
 const metreSumNode = document.querySelector(".js-banner-area-sum");
 const sumNode = document.querySelector(".js-banner-price-sum");
+const houseType = document.querySelector("select");
 
-let price = 1000;
+let price = 1000; //цена по умолчанию.
+metreSumNode.innerText = price.toLocaleString();
 
 //добавление id чекбоксу.
 checkboxes.forEach((checkbox, i) => {
@@ -120,32 +125,31 @@ checkboxes.forEach((checkbox, i) => {
 
 function loadFromLocalStorage() {
   checkboxes.forEach((checkbox) => {
-    const isChecked = localStorage.getItem(checkbox.id) === 'true';
+    const isChecked = localStorage.getItem(checkbox.id) === "true";
     checkbox.checked = isChecked;
     if (isChecked) {
-      checkbox.closest('.add-services-item').classList.add('checked');
+      checkbox.closest(".add-services-item").classList.add("checked");
     }
   });
-  id_range.value = localStorage.getItem('id_range.value') || 0;
+  id_range.value = localStorage.getItem("id_range.value") || 0;
 }
 
 function updateLocalStorage() {
   checkboxes.forEach((checkbox) => {
     localStorage.setItem(checkbox.id, checkbox.checked);
   });
-  localStorage.setItem('id_range.value', id_range.value);
+  localStorage.setItem("id_range.value", id_range.value);
 }
 
 const metres = function () {
   let sum = 0;
   checkboxes.forEach((checkbox) => {
     if (checkbox.checked) {
-      const price = parseInt(checkbox.value);
-      sum += price;
+      sum += parseInt(checkbox.value);
     }
   });
   sum += price * parseInt(id_range.value);
-  sumNode.innerHTML = sum;
+  sumNode.innerHTML = sum.toLocaleString();
   send_result.innerHTML = id_range.value;
 };
 
@@ -153,18 +157,48 @@ checkboxes.forEach((checkbox) => {
   checkbox.addEventListener("change", metres);
 });
 
-loadFromLocalStorage(); 
+loadFromLocalStorage();
 metres();
 
 checkboxes.forEach((checkbox) => {
   checkbox.addEventListener("change", () => {
-    checkbox.closest('.add-services-item').classList.toggle("checked");
+    checkbox.closest(".add-services-item").classList.toggle("checked");
     updateLocalStorage();
     metres();
   });
 });
 
-id_range.value.addEventListener("input", () => {
-  updateLocalStorage();
+//в зависимости от типа помещения стоимость квадратного метра меняется.
+houseType.addEventListener("change", (e) => {
+  if (e.target.value === "квартира") {
+    price = 1000;
+  }
+  if (e.target.value === "апартаменты") {
+    price = 2000;
+  }
+  if (e.target.value === "офис") {
+    price = 1500;
+  }
+  if (e.target.value === "пентхаус") {
+    price = 2500;
+  }
+  if (e.target.value === "склад") {
+    price = 1300;
+  }
+  metreSumNode.innerText = price.toLocaleString();
   metres();
+});
+
+//кликабельность заголовков в доп услугах.
+const descriptions = document.querySelectorAll(".add-services-desc");
+descriptions.forEach((desc, i) => {
+  desc.addEventListener("click", () => {
+    const checkbox = checkboxes[i];
+    checkbox.checked = !checkbox.checked;
+    checkbox
+      .closest(".add-services-item")
+      .classList.toggle("checked", checkbox.checked);
+    updateLocalStorage();
+    metres();
+  });
 });
